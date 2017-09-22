@@ -23,6 +23,14 @@ class ViewController: UIViewController {
         
         }))
         
+        alertController.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+            
+            print("No button pressed")
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }))
+        
         self.present(alertController, animated: true, completion: nil)
     
     }
