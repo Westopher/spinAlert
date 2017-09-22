@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var activityIndicator = UIActivityIndicatorView()
 
     
     @IBAction func createAlert(_ sender: Any) {
@@ -37,9 +39,26 @@ class ViewController: UIViewController {
     
     
     @IBAction func pauseApp(_ sender: Any) {
+        
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        
+        activityIndicator.center = self.view.center
+        
+        activityIndicator.hidesWhenStopped = true
+        
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
+        
     }
     
     @IBAction func restoreApp(_ sender: Any) {
+        
+        activityIndicator.stopAnimating()
+        
     }
     
     
